@@ -1,0 +1,51 @@
+<%# coding: UTF-8 %>
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>こじつけトライアングル</title>
+    <link href="<%= app_path %>/main.css" media="screen" rel="stylesheet" type="text/css" /> 
+  </head>
+  <body>
+    <h1>こじつけトライアングル</h1>
+    <h2>こじつけでパワースポットを探そう！</h2>
+    <h3>author: <a href="http://twitter.com/parrot_studio">@parrot_studio</a></h3>
+    <form action="<%= app_path %>/g" method="POST">
+      <div class="coordinate">
+        <div class="geo left">緯度(lat)</div><div class="geo right">経度(lon)</div>
+        <input class="geo left" type="text" id="geo1lat" name="geo1lat" />
+        <input class="geo right" type="text" id="geo1lon" name="geo1lon" /><br />
+        <input class="geo left" type="text" id="geo2lat" name="geo2lat" />
+        <input class="geo right" type="text" id="geo2lon" name="geo2lon" /><br />
+        <input class="geo left" type="text" id="geo3lat" name="geo3lat" />
+        <input class="geo right" type="text" id="geo3lon" name="geo3lon" /><br />
+        <input type="submit" id="calc" name="calc" value="中心を求める" />
+      </div>
+    </form>
+    <hr />
+    <h3>使い方</h3>
+    <ol>
+      <li><a href="http://maps.google.co.jp/" target="_blank">GoogleMap</a>を開き、適当なポイントで右クリックして「この場所について」を選びます（Chromeでないとダメかも？）</li>
+      <li>GoogleMapの入力欄に表示された緯度経度を上に入力します</li>
+      <li>適当に三箇所選びます</li>
+      <li>おもむろに「中心を求める」を押します</li>
+      <li>それっぽい地図が出てきます</li>
+      <li>うまいこと三点を選ぶと、中心がそれっぽい場所になるので、後はそこが「パワースポットである」と吹聴するだけです</li>
+    </ol>
+    <h3>その他</h3>
+    <ul>
+      <li>住所から座標を求める仕組みはやろうと思えばできますがやってません</li>
+      <li>APIの使用制限が面倒すぎ、かといってそれを回避しようとするとDBがいるので</li>
+      <li>きっと誰かがやってくれる・・・</li>
+    </ul>
+    <ul>
+      <li>地図を表示するURLの"m"を"c"に変えると、中心座標をJSON形式で返します</li>
+      <li>不正な座標だと空ハッシュを返します</li>
+    </ul>
+    <ul>
+      <li>ソースコードは<a href="https://github.com/parrot-studio/geo-triangle-sampleweb" target="_blank">こちら</a></li>
+      <li>Rubyのgem「geo-triangle」に関する情報は<a href="https://github.com/parrot-studio/geo-triangle" target="_blank">こちら</a></li>
+    </ul>
+  </body>
+</html>

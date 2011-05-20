@@ -1,0 +1,36 @@
+body {
+  background-color: #fff3f3;
+}
+
+a:link, a:visited {
+  color: #1111cc
+}
+
+a:hover, a:active {
+  color: #ff1111;
+}
+
+#map {
+  width: 600px;
+  height: 400px;
+}
+
+.coordinate {
+  width: 200px;
+}
+
+.geo {
+  width: 90px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.big {
+  font-size: 24px;
+}
