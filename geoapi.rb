@@ -18,7 +18,7 @@ post '/g' do
   end
   c = get_center(nums)
   target = c ? "/m/#{nums.map{|n| geo_num(n)}.join(',')}" : "/"
-  redirect target
+  redirect app_path + target
 end
 
 #get '/app.js' do
